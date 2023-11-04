@@ -26,4 +26,4 @@
 
 本项目所使用的csv文件（上证指数，沪深300）已经放在目录中。更多中国A股数据详见：
 
-https://www.kaggle.com/datasets/stevenchen116/stochdaily
+[https://www.kaggle.com/datasets/stevenchen116/stochdaily](https://www.kaggle.com/datasets/stevenchen116/stockchina)https://www.kaggle.com/datasets/stevenchen116/stockchina
