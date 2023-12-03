@@ -34,11 +34,9 @@ As we all know, factors are very important judgment criteria for any quantitativ
 
 p.s.
 
-```
-制作这个calculator是因为我正在参加宾夕法尼亚大学(UPenn)沃顿商学院(Wharton)开设的Wharton Global High School Investment Competition.在这个比赛中，学生们需要使用$100,000进行投资，构建自己的投资组合。而我在我的团队中使用了这些因子进行选股和择时，取得了较为不错的效果。
+*制作这个calculator是因为我正在参加宾夕法尼亚大学(UPenn)沃顿商学院(Wharton)开设的Wharton Global High School Investment Competition.在这个比赛中，学生们需要使用$100,000进行投资，构建自己的投资组合。而我在我的团队中使用了这些因子进行选股和择时，取得了较为不错的效果。*
 
-This calculator was created because I am participating in the Wharton Global High School Investment Competition run by the Wharton School of the University of Pennsylvania (UPenn).In this competition, students are required to invest 100,000 to construct their own In this competition, students were asked to invest 100,000 to build their own portfolios. In this competition, students were asked to invest $100,000 in order to build their portfolios. I used these factors in my team for stock picking and timing, and I had good results.
-```
+*This calculator was created because I am participating in the Wharton Global High School Investment Competition run by the Wharton School of the University of Pennsylvania (UPenn).In this competition, students are required to invest 100,000 to construct their own In this competition, students were asked to invest 100,000 to build their own portfolios. In this competition, students were asked to invest $100,000 in order to build their portfolios. I used these factors in my team for stock picking and timing, and I had good results.*
 
 
 
