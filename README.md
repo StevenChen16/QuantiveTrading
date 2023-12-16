@@ -28,9 +28,9 @@ Predicts stocks using the svm method of machine learning. The program downloads 
 
 #### 5. indexCalculator
 
-众所周知，对于任何量化交易或非量化交易来说，因子都是很重要的判断标准，其中包括夏普比率(Sharpe ratio)，索提诺比率(sortino ratio)，贝塔（Beta/β），阿尔法（alpha/α），特雷诺比率（Treynor Ratio），VaR等。这个程序提供了计算以上这些基本因子的方法，并且支持计算投资组合的因子。程序通过yfinance库从Yahoo Finance下载数据。
+众所周知，对于任何量化交易或非量化交易来说，因子都是很重要的判断标准，其中包括夏普比率(Sharpe ratio)，索提诺比率(sortino ratio)，贝塔（Beta/β），阿尔法（alpha/α）等。这个程序提供了计算以上这些基本因子的方法，并且支持计算投资组合的因子。程序通过yfinance库从Yahoo Finance下载数据。
 
-As we all know, factors are very important judgment criteria for any quantitative or non-quantitative trading, which include Sharpe ratio, sortino ratio, beta, alpha, Treynor Ratio, VaR, etc. This program provides the ability to calculate these basic criteria for any quantitative or non-quantitative trading. This program provides methods for calculating these basic factors above and supports calculating factors for portfolios. The program downloads data from Yahoo Finance via the yfinance library.
+As we all know, factors are very important judgment criteria for any quantitative or non-quantitative trading, which include Sharpe ratio, sortino ratio, beta, alpha, etc. This program provides the ability to calculate these basic criteria for any quantitative or non-quantitative trading. This program provides methods for calculating these basic factors above and supports calculating factors for portfolios. The program downloads data from Yahoo Finance via the yfinance library.
 
 p.s.
 
