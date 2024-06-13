@@ -49,3 +49,9 @@ p.s.
 More China A-share data is detailed at:
 
 [https://www.kaggle.com/datasets/stevenchen116/stochchina](https://www.kaggle.com/datasets/stevenchen116/stockchina)
+[huggingface](https://huggingface.co/datasets/StevenChen16/Stock-China-daily)
+
+
+如果您需要以秒为单位的数据，请通过邮箱与我联系：
+If you need data on a per-second basis, please contact me via email:
+[i@stevenchen.site](mailto:i@stevenchen.site)
