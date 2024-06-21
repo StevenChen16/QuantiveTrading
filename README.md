@@ -1,42 +1,122 @@
-这是一个开源的量化交易（quantive trading）项目
+# Stock Prediction and Quantitative Trading Project
 
-This is an open source quantitative trading project
+This project combines two related initiatives: a CNN-based stock prediction model and a collection of quantitative trading strategies and tools. It aims to provide a comprehensive suite for stock analysis, prediction, and trading.
 
-#### 1.LSTM
+## Project Overview
 
-使用LSTM模型进行预测，其模型已经放在目录中。程序通过yfinance库从Yahoo Finance下载数据。
+The project consists of the following main components:
 
-Use LSTM model for prediction, its model has been placed in the directory . Program through the yfinance library to download data from Yahoo Finance.
+1. CNN-based Stock Prediction
+2. Various Trading Strategies (LSTM, MACD, Bollinger Bands, SVM)
+3. Index and Factor Calculator
+4. Data Preprocessing and Analysis Tools
 
-#### 2.MACD
+## Main Files
 
-双均线策略是十分常见的模型，本项目使用python复现了该模型。程序通过yfinance库从Yahoo Finance下载数据。
+### CNN Stock Prediction
+- `cnn-big.ipynb`: Main CNN model training and evaluation code
+- `resnet.ipynb`: Experiments with ResNet architecture
+- `autoencoder.ipynb`: Autoencoder experiments
+- `bt-multi-model.py`: Multi-model backtesting code
 
-The Double SMA strategy is a very common model and this project reproduces the model using python. The program downloads data from Yahoo Finance via the yfinance library.
+### Quantitative Trading Strategies
+- LSTM model implementation
+- MACD (Moving Average Convergence Divergence) strategy
+- Bollinger Bands implementation
+- SVM (Support Vector Machine) prediction model
 
-#### 3.布林带(Bollinger Band)
+### Tools
+- `indexCalculator`: Calculates various financial indices and factors
 
-可以绘制布林带以判断购买时机。程序通过yfinance库从Yahoo Finance下载数据。
+## Requirements
 
-Bollinger bands can be plotted to determine the timing of a purchase. The program downloads data from Yahoo Finance via the yfinance library.
+The project dependencies include:
 
-#### 4.SVM
+- pandas
+- numpy 
+- scikit-learn
+- tqdm
+- tensorflow
+- matplotlib
+- yfinance
 
-通过机器学习的svm方法对股票进行预测。程序通过yfinance库从Yahoo Finance下载数据。
+Install dependencies:
+```
+pip install -r requirements.txt
+```
 
-Predicts stocks using the svm method of machine learning. The program downloads data from Yahoo Finance via the yfinance library.
+## Usage
 
-#### 5. indexCalculator
+1. CNN Stock Prediction:
+   - Run Jupyter notebooks to train and evaluate models.
+   - Use `bt-multi-model.py` for backtesting.
 
-众所周知，对于任何量化交易或非量化交易来说，因子都是很重要的判断标准，其中包括夏普比率(Sharpe ratio)，索提诺比率(sortino ratio)，贝塔（Beta/β），阿尔法（alpha/α）等。这个程序提供了计算以上这些基本因子的方法，并且支持计算投资组合的因子。程序通过yfinance库从Yahoo Finance下载数据。
+2. Quantitative Trading Strategies:
+   - Each strategy is implemented in its own script or notebook.
+   - Data is downloaded from Yahoo Finance using the yfinance library.
 
-As we all know, factors are very important judgment criteria for any quantitative or non-quantitative trading, which include Sharpe ratio, sortino ratio, beta, alpha, etc. This program provides the ability to calculate these basic criteria for any quantitative or non-quantitative trading. This program provides methods for calculating these basic factors above and supports calculating factors for portfolios. The program downloads data from Yahoo Finance via the yfinance library.
+3. Index Calculator:
+   - Use this tool to calculate important financial factors such as Sharpe ratio, Sortino ratio, Beta, and Alpha for individual stocks or portfolios.
 
-p.s.
+## Model Architectures
 
-*制作这个calculator是因为我正在参加宾夕法尼亚大学(UPenn)沃顿商学院(Wharton)开设的Wharton Global High School Investment Competition.在这个比赛中，学生们需要使用$100,000进行投资，构建自己的投资组合。而我在我的团队中使用了这些因子进行选股和择时，取得了较为不错的效果。*
+The project uses various model architectures, including:
 
-*This calculator was created because I am participating in the Wharton Global High School Investment Competition run by the Wharton School of the University of Pennsylvania (UPenn).In this competition, students are required to invest 100,000 to construct their own In this competition, students were asked to invest 100,000 to build their own portfolios. In this competition, students were asked to invest $100,000 in order to build their portfolios. I used these factors in my team for stock picking and timing, and I had good results.*
+- Convolutional Neural Networks (CNN)
+- Long Short-Term Memory (LSTM)
+- ResNet
+- Autoencoder
+- Support Vector Machine (SVM)
+
+## Data Sources
+
+- Yahoo Finance (via yfinance library)
+- For more China A-share data, refer to:
+  - [Kaggle Dataset](https://www.kaggle.com/datasets/stevenchen116/stochchina)
+  - [Hugging Face Dataset](https://huggingface.co/datasets/StevenChen16/Stock-China-daily)
+
+## Results
+
+Model performance and backtesting results can be found in the respective notebooks and scripts.
+
+## Future Work
+
+- Experiment with more feature engineering
+- Optimize model architectures
+- Implement additional backtesting strategies
+- Integrate more data sources
+
+## Contributing
+
+Issues, suggestions for improvement, and pull requests are welcome!
+
+## Contact
+
+For inquiries about per-second data or other questions, please contact: [i@stevenchen.site](mailto:i@stevenchen.site)
+
+## License
+
+MIT License
+
+Copyright (c) [2023-2024] [Steven Chen]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
 
