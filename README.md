@@ -1,7 +1,7 @@
 # Stock Prediction and Quantitative Trading Project
 
 This project combines two related initiatives: a CNN-based stock prediction model and a collection of quantitative trading strategies and tools. It aims to provide a comprehensive suite for stock analysis, prediction, and trading.
-Click here to read (Chinese version)[README-zh.md]
+Click here to read ([Chinese version](https://github.com/StevenChen16/QuantiveTrading/blob/main/REDME-zh.md))
 
 ## Project Overview
 
