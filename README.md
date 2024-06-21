@@ -73,7 +73,7 @@ The project uses various model architectures, including:
 
 - Yahoo Finance (via yfinance library)
 - For more China A-share data, refer to:
-  - [Kaggle Dataset](https://www.kaggle.com/datasets/stevenchen116/stochchina)
+  - [Kaggle Dataset](https://www.kaggle.com/datasets/stevenchen116/stockchina)
   - [Hugging Face Dataset](https://huggingface.co/datasets/StevenChen16/Stock-China-daily)
 
 ## Results
