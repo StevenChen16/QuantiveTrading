@@ -37,15 +37,6 @@ class StockSpectralAnalysis:
         self.df['log_return'] = np.log(self.df['Close'] / self.df['Close'].shift(1))
         self.df = self.df.dropna()
         
-    def compute_basic_metrics(self):
-        """计算基本指标"""
-        # 计算移动平均
-        self.df['MA21'] = self.df['Close'].rolling(window=21).mean()
-        self.df['MA63'] = self.df['Close'].rolling(window=63).mean()
-        self.df['MA252'] = self.df['Close'].rolling(window=252).mean()
-        
-        # 计算波动率
-        self.df['vol_21'] = self.df['log_return'].rolling(window=21).std() * np.sqrt(252)
         
     def perform_fft(self, filter_threshold=None):
         """执行傅里叶变换，可选择性地过滤高频成分"""
@@ -208,33 +199,52 @@ class StockSpectralAnalysis:
         plt.legend()
         plt.grid(True)
         return plt
-    
+
+    def compute_basic_metrics(self):
+        """计算基本指标，使用FFT滤波替代移动平均"""
+        # 计算21日、63日和252日滤波后的价格序列
+        self.df['FFT21'] = self.filter_high_frequency(cutoff_period=21)
+        self.df['FFT63'] = self.filter_high_frequency(cutoff_period=63)
+        self.df['FFT252'] = self.filter_high_frequency(cutoff_period=252)
+        
+        """计算基本指标"""
+        # 计算移动平均
+        self.df['MA21'] = self.df['Close'].rolling(window=21).mean()
+        self.df['MA63'] = self.df['Close'].rolling(window=63).mean()
+        self.df['MA252'] = self.df['Close'].rolling(window=252).mean()
+
+        # 计算波动率
+        self.df['vol_21'] = self.df['log_return'].rolling(window=21).std() * np.sqrt(252)
+
     def get_trading_signals(self):
-        """生成交易信号"""
-        # 基于多个指标综合生成信号
+        """基于FFT滤波生成交易信号"""
         signals = pd.DataFrame(index=self.df.index)
         
-        # 1. 趋势信号（基于移动平均）
-        signals['trend'] = np.where(self.df['MA21'] > self.df['MA63'], 1, -1)
+        # 使用FFT滤波后的价格序列判断趋势
+        signals['trend'] = np.where(self.df['FFT21'] > self.df['FFT63'], 1, -1)
         
-        # 2. 波动率信号
+        # 波动率信号
         vol_mean = self.df['vol_21'].mean()
         signals['volatility'] = np.where(self.df['vol_21'] > vol_mean, 'high', 'low')
         
-        # 3. 相位信号（基于希尔伯特变换）
+        # 相位信号
         analytic_signal = hilbert(self.df['log_return'].values)
         phase = np.angle(analytic_signal)
         phase_diff = np.diff(phase)
-        phase_diff = np.append(phase_diff, phase_diff[-1])  # 补充最后一个值
+        phase_diff = np.append(phase_diff, phase_diff[-1])
         signals['phase'] = np.where(phase_diff > 0, 1, -1)
         
         return signals
     
     def print_analysis_summary(self):
         """打印分析摘要"""
-        # 确保先执行FFT分析和寻找显著周期
+        # 执行FFT分析和寻找显著周期
         self.perform_fft()
         self.find_significant_periods()
+        
+        # 计算各周期滤波
+        fft21 = self.filter_high_frequency(cutoff_period=21)
+        fft63 = self.filter_high_frequency(cutoff_period=63)
         
         print("\n=== 股票分析摘要 ===")
         
@@ -252,7 +262,7 @@ class StockSpectralAnalysis:
         
         # 趋势分析
         print("\n3. 趋势分析:")
-        current_trend = "上升" if self.df['MA21'].iloc[-1] > self.df['MA63'].iloc[-1] else "下降"
+        current_trend = "上升" if fft21.iloc[-1] > fft63.iloc[-1] else "下降"
         print(f"当前趋势: {current_trend}")
         
         # 市场状态
